@@ -1,0 +1,41 @@
+/******** Colores ********/
+:root {
+  --primary-color: #81b29a;
+  --secondary-color: #e07a5f;
+  --third-color: #f2cc8f;
+  --text-color: #3d405b;
+  --background-color: #f4f1de;
+}
+/****** Estilos Base *****/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*** Estilos Especificos ***/
+.colors {
+  display: flex;
+}
+.colors div {
+  padding: 1em 2em;
+  flex: 1 1 20%;
+  text-align: center;
+}
+.primary {
+  background-color: var(--primary-color);
+}
+.secondary {
+  background-color: var(--secondary-color);
+}
+.third {
+  background-color: var(--third-color);
+}
+.text {
+  background-color: var(--text-color);
+  color: #fff;
+}
+.background {
+  background-color: var(--background-color);
+}
