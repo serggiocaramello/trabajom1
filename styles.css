@@ -5,6 +5,7 @@
   --third-color: #f2cc8f;
   --text-color: #3d405b;
   --background-color: #f4f1de;
+  --banner-background-color: rgba(0, 0, 0, 0.5);
 }
 /****** Estilos Base *****/
 
@@ -12,30 +13,135 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+}
+body {
+  background-color: var(--background-color);
+}
+h1,
+h2,
+h3,
+p {
+  color: var(--text-color);
+}
+h2 {
+  margin: 1em 0;
+  text-align: center;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+main {
+  padding: 0 1em;
 }
 
 /*** Estilos Especificos ***/
-.colors {
-  display: flex;
-}
-.colors div {
-  padding: 1em 2em;
-  flex: 1 1 20%;
-  text-align: center;
-}
-.primary {
+
+/*********** Navbar ************/
+nav {
   background-color: var(--primary-color);
+  padding: 0 1em;
 }
-.secondary {
-  background-color: var(--secondary-color);
+.logo {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 700;
 }
-.third {
-  background-color: var(--third-color);
+nav ul {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.text {
+nav a {
+  padding: 0.75em 1em;
+  color: var(--background-color);
+  transition: all 0.3s ease;
+}
+nav a:hover {
   background-color: var(--text-color);
-  color: #fff;
+  color: var(--background-color);
 }
-.background {
-  background-color: var(--background-color);
+
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/*********** Banner ************/
+.banner {
+  height: calc(100vh - 100px);
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.banner--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--banner-background-color);
+  width: 100%;
+  height: 100%;
+}
+.banner--text h1,
+.banner--text p {
+  color: var(--background-color);
+}
+
+@media screen and (min-width: 768px) {
+  .banner {
+    height: calc(100vh - 50px);
+  }
+}
+
+/******** Servicios ********/
+
+/******* Destinos *********/
+.card {
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: var(--third-color);
+  border: 2px solid var(--third-color);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  border: 2px solid var(--text-color);
+}
+.card h3 {
+  margin-bottom: 1em;
+}
+
+.card p {
+  margin-bottom: 1em;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .destinos--cards-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .card {
+    flex: 0 0 49%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card {
+    flex: 0 0 24%;
+  }
 }
